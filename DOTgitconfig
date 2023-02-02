@@ -1,0 +1,10 @@
+[credential "https://github.com"]
+  helper =
+  helper = !gh auth git-credential
+
+# Enforce HTTPS
+[url "https://github.com/"]
+  insteadOf = git@github.com:
+
+[url "https://"]
+  insteadOf = git:

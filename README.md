@@ -1,45 +1,35 @@
-Flutter Docker image
-====================
+docker run --rm -it -v ${PWD}:/stage flutter-docker-image /bin/bash -c "flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs && cd dashbook &&  flutter pub get && cd && flutter analyze --no-fatal-warnings"
 
-[![Release](https://img.shields.io/github/v/release/instrumentisto/flutter-docker-image "Release")](https://github.com/instrumentisto/flutter-docker-image/releases)
-[![CI](https://github.com/instrumentisto/flutter-docker-image/workflows/CI/badge.svg?branch=main "CI")](https://github.com/instrumentisto/flutter-docker-image/actions?query=workflow%3ACI+branch%3Amain)
-[![Docker Hub](https://img.shields.io/docker/pulls/instrumentisto/flutter?label=Docker%20Hub%20pulls "Docker Hub pulls")](https://hub.docker.com/r/instrumentisto/flutter)
 
-[Docker Hub](https://hub.docker.com/r/instrumentisto/flutter)
-| [GitHub Container Registry](https://github.com/orgs/instrumentisto/packages/container/package/flutter)
-| [Quay.io](https://quay.io/repository/instrumentisto/flutter)
-
-[Changelog](https://github.com/instrumentisto/flutter-docker-image/blob/main/CHANGELOG.md)
-
-Based on [`cirrusci/android-sdk` Docker image][2].
+docker run --rm -it -v ${PWD}:/stage flutter-docker-image /bin/bash -c "flutter pub get && cd dashbook && flutter pub get && cd /stage && flutter packages pub run build_runner build --delete-conflicting-outputs  && flutter pub run build_runner build --delete-conflicting-outputs && flutter analyze --no-fatal-warnings"
 
 
 
 
-## Supported tags and respective `Dockerfile` links
 
+docker run --rm -it -v ${PWD}:/stage flutter-docker-image /bin/bash -c "flutter pub get && cd dashbook && flutter pub get && cd && flutter packages pub run build_runner build --delete-conflicting-outputs & flutter pub run build_runner build --delete-conflicting-outputs && flutter analyze --no-fatal-warnings"
+
+
+<<<<<<< Updated upstream
 - [`3.7.1-androidsdk33-r0`, `3.7.1`, `3.7`, `3`, `latest`][201]
+=======
+>>>>>>> Stashed changes
+
+
+docker run --rm -it -v ${PWD}:/stage flutter-docker-image /bin/bash -c "flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs && cd dashbook &&  flutter pub get && cd && flutter analyze -vv --no-fatal-warnings"
 
 
 
 
-## Supported toolchains
 
-- `Android`
-- `Linux`
-- `Web`
+
+flutter test --verbose
 
 
 
+        ##flutter analyze --no-congratulate -vv --no-fatal-infos --no-fatal-warnings
 
-## What is [Flutter]?
-
-[Flutter] is Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.
-  
-This image contains all the necessary toolkit fot building [Flutter] applications.
-
-> [flutter.dev](https://flutter.dev)
-
+<<<<<<< Updated upstream
 ![Flutter Logo](https://flutter.dev/assets/images/shared/brand/flutter/logo/flutter-lockup.png)
 
 
@@ -117,3 +107,8 @@ If you have any problems with or questions about this image, please contact us t
 [92]: https://github.com/flutter/flutter/blob/master/LICENSE
 
 [201]: https://github.com/instrumentisto/flutter-docker-image/blob/main/Dockerfile
+=======
+      - name: Lint
+        run: |
+          flutter test --verbose
+>>>>>>> Stashed changes
